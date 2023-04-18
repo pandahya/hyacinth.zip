@@ -19,7 +19,7 @@
     <main>
         <button id="left" onclick="prevPage()">&larr;</button>
         <figure>
-            <img id="page" src="./assets/page_0.jpg">
+            <img id="page" src="./assets/notebook_0.jpg">
         </figure>
         <button id="right" onclick="nextPage()">&rarr;</button>
     </main>
@@ -28,20 +28,20 @@
     let image = document.querySelector("#page");
     let more = document.querySelector("#more");
     let pageNum = 0;
-    let maxPage = 2;
+    let maxPage = 110;
 
     function prevPage(){
         if(pageNum > 0){
             pageNum--;
         }
-        image.src = `./assets/page_${pageNum}.jpg`;
+        image.src = `./assets/notebook_${pageNum}.jpg`;
     }
 
     function nextPage(){
         if(pageNum < maxPage){
             pageNum++;
         }
-        image.src = `./assets/page_${pageNum}.jpg`;
+        image.src = `./assets/notebook_${pageNum}.jpg`;
     }
 
     function toggleMore(){
