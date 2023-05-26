@@ -5,51 +5,122 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>notebook</title>
+    <title>hyacinth.zip</title>
 </head>
 <body>
     <nav>
         <a href="index.html"><img id="signature" src="./assets/signature.svg"></a>
-        <button id="moreBtn" onclick="toggleMore()">?</button>
+        <!-- <button id="moreBtn" onclick="toggleMore()">?</button> -->
     </nav>
-    <div id="more">
-        <h1>notebook</h1>
-        <p>This is my notebook. Where I ideate, take notes, problem solve, doodle, etc.</p>
-    </div>
-    <main>
-        <button id="left" onclick="prevPage()">&larr;</button>
-        <figure>
-            <img id="page" src="./assets/notebook_0.jpg">
-        </figure>
-        <button id="right" onclick="nextPage()">&rarr;</button>
+    <main id="filterContainer">
+        <div id="filterBtnContainer">
+            <button class="filterBtn active" onclick="filterSelection('all')">
+                <figure>
+                    <img src="assets/folder.png">
+                    <figcaption>all</figcaption>
+                </figure>
+            </button>
+            <button class="filterBtn" onclick="filterSelection('notebook')">
+                <figure>
+                    <img src="assets/folder.png">
+                    <figcaption>notebooks</figcaption>
+                </figure>
+            </button>
+            <button class="filterBtn" onclick="filterSelection('drawing')">
+                <figure>
+                    <img src="assets/folder.png">
+                    <figcaption>drawings</figcaption>
+                </figure>
+            </button>
+            <button class="filterBtn" onclick="filterSelection('painting')">
+                <figure>
+                    <img src="assets/folder.png">
+                    <figcaption>paintings</figcaption>
+                </figure>
+            </button>
+            <button class="filterBtn" onclick="filterSelection('bookart')">
+                <figure>
+                    <img src="assets/folder.png">
+                    <figcaption>book art</figcaption>
+                </figure>
+            </button>
+            <button class="filterBtn" onclick="filterSelection('misc')">
+                <figure>
+                    <img src="assets/folder.png">
+                    <figcaption>misc</figcaption>
+                </figure>
+            </button>
+        </div>
+        <div id="fileWindow">
+            <div id="fileWindowTopbar">
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
+            </div>
+            <div id="filterItemContainer">
+                <figure class="filterItem notebook">
+                    <a href="notebook1.html">
+                        <img src="assets/notebook1_icon.png">
+                        <figcaption>notebook date-date</figcaption>
+                    </a>
+                </figure>
+                <figure class="filterItem bookart">
+                    <a href="kong.html">
+                        <img src="assets/kong_icon.png">
+                        <figcaption>空 [kōng]</figcaption>
+                    </a>
+                </figure>
+                <figure class="filterItem misc">
+                    <a href="businesscards.html">
+                        <img src="assets/businesscards_icon.png">
+                        <figcaption>business cards</figcaption>
+                    </a>
+                </figure>
+            </div>
+        </div>
     </main>
 </body>
 <script>
-    let image = document.querySelector("#page");
-    let more = document.querySelector("#more");
-    let pageNum = 0;
-    let maxPage = 141;
-
-    function prevPage(){
-        if(pageNum > 0){
-            pageNum--;
-        }
-        image.src = `./assets/notebook_${pageNum}.jpg`;
+    //https://www.w3schools.com/howto/howto_js_filter_elements.asp
+    filterSelection('all');
+    function filterSelection(c) {
+    let x, i;
+    x = document.getElementsByClassName("filterItem");
+    if (c == "all") c = "";
+    for (i = 0; i < x.length; i++) {
+        removeClass(x[i], "show");
+        if (x[i].className.indexOf(c) > -1) addClass(x[i], "show");
     }
-
-    function nextPage(){
-        if(pageNum < maxPage){
-            pageNum++;
-        }
-        image.src = `./assets/notebook_${pageNum}.jpg`;
     }
-
-    function toggleMore(){
-        if(more.style.visibility == "visible"){
-            more.style.visibility = "hidden";
-        }else{
-            more.style.visibility = "visible";
+    function addClass(element, name){
+        let i, arr1, arr2;
+        arr1 = element.className.split(" ");
+        arr2 = name.split(" ");
+        for(i = 0; i < arr2.length; i++){
+            if(arr1.indexOf(arr2[i]) == -1){
+                element.className += " " + arr2[i];
+            }
         }
+    }
+    function removeClass(element, name){
+        let i, arr1, arr2;
+        arr1 = element.className.split(" ");
+        arr2 = name.split(" ");
+        for (i = 0; i < arr2.length; i++) {
+            while (arr1.indexOf(arr2[i]) > -1) {
+            arr1.splice(arr1.indexOf(arr2[i]), 1);
+            }
+        }
+        element.className = arr1.join(" ");
+    }
+    let btnContainer = document.getElementById("filterBtnContainer");
+    let btns = btnContainer.getElementsByClassName("filterBtn");
+    for (let i = 0; i < btns.length; i++) {
+        btns[i].addEventListener("click", function() {
+            let current = document.getElementsByClassName("active");
+            current[0].className = current[0].className.replace(" active", "");
+            this.className += " active";
+        });
     }
 </script>
 </html>
