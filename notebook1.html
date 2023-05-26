@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>notebook1</title>
+</head>
+<style>
+    main{
+        display: flex;
+        justify-content:center;
+        width:fit-content;
+        margin: auto auto;
+    }
+</style>
+<body>
+    <nav>
+        <a href="index.html"><img id="signature" src="./assets/signature.svg"></a>
+        <button id="moreBtn" onclick="toggleMore()">?</button>
+    </nav>
+    <div id="more">
+        <h1>notebook</h1>
+        <p>This is my notebook. Where I ideate, take notes, problem solve, doodle, etc.</p>
+    </div>
+    <main>
+        <button id="left" onclick="prevPage()">&larr;</button>
+        <figure>
+            <img id="page" src="./assets/notebook_0.jpg">
+        </figure>
+        <button id="right" onclick="nextPage()">&rarr;</button>
+    </main>
+</body>
+<script>
+    let image = document.querySelector("#page");
+    let more = document.querySelector("#more");
+    let pageNum = 0;
+    let maxPage = 141;
+
+    function prevPage(){
+        if(pageNum > 0){
+            pageNum--;
+        }
+        image.src = `./assets/notebook_${pageNum}.jpg`;
+    }
+
+    function nextPage(){
+        if(pageNum < maxPage){
+            pageNum++;
+        }
+        image.src = `./assets/notebook_${pageNum}.jpg`;
+    }
+
+    function toggleMore(){
+        if(more.style.visibility == "visible"){
+            more.style.visibility = "hidden";
+        }else{
+            more.style.visibility = "visible";
+        }
+    }
+</script>
+</html>
