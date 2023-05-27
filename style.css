@@ -1,35 +1,79 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+:root{
+    --white: white;
+    --mainBg: rgba(255,255,255);
+}
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Inter Tight', sans-serif;
+    font-family: 'PP Mori', sans-serif;
 }
 body{
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
+    padding-bottom: 120px;
+    /* background-image: url('assets/habokidpix.jpg'); */
+    /* background-size: contain; */
+}
+#notebookPage{
+    padding-bottom: 0px;
+}
+main{
+    margin: auto;
+    max-width: 1080px;
+    background-color: var(--mainBg);
+    padding-top: 64px;
+
+}
+article{
+    margin: 40px 0px;
 }
 figure{
-    width: 50vw;
-    margin: auto auto;
+    max-width: 1080px;
+    width: fit-content;
+}
+figcaption{
+    text-align: center;
+    padding: 10px;
 }
 img{
     width: 100%;
 }
-nav{
-    padding: 10px;
-    display: flex;
-    justify-content: space-between;
-    /* outline: 1px solid red; */
+iframe{
+    border: 1px solid grey;
 }
+nav{
+    /* padding: 10px; */
+    /* justify-content: space-around; */
+    position: fixed;
+    /* background-color: skyblue; */
+    width: 100%;
+}
+
+h1{
+    font-size: 2.5rem;
+    /* background-color: red; */
+    margin: 10px 0;
+}
+h2{
+    font-size: 2rem;
+    margin: 10px 0;
+}
+h3{
+    font-size: 1.5rem;
+    margin: 10px 0;
+}
+
 button{
     /* outline: 1px solid beige; */
     background-color: white;
     /* border-radius: 5px; */
     height: fit-content;
     border: none;
-    font-size: 1rem;
+    /* font-size: 1rem; */
 }
+
 a:link, a:visited{
     color: black;
     text-decoration: none;
@@ -37,6 +81,36 @@ a:link, a:visited{
 a:hover, a:active{
     color: black;
 }
+
+.gallery{
+    display: grid;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+.gallery figure{
+    border: 1px solid grey;
+    background-color: var(--white);
+    border-radius: 4px;
+}
+.gallery figure::before{
+    display: block;
+    content: url('assets/windowbtns.png');
+    padding: 8px 8px 4px 8px;
+    border-bottom: 1px dotted grey
+}
+.gallery figcaption{
+    border-top: 1px dotted grey
+}
+.gallery iframe{
+    border: none;
+}
+.two{
+    grid: 1fr / 1fr 1fr;
+}
+.three{
+    grid: 1fr / 1fr 1fr 1fr;
+}
+
 #signature{
     width: 150px;
 }
@@ -92,9 +166,10 @@ a:hover, a:active{
 }
 #fileWindowTopbar{
     display: flex;
-    gap: 5px;
+    gap: 10px;
     padding: 10px;
     margin-bottom: 20px;
+    border-bottom: 1px dotted grey;
 }
 /* #fileWindowTopbar :first-child:hover{
     background-color: red;
@@ -109,8 +184,8 @@ a:hover, a:active{
     outline: 1px solid green;
 } */
 .circle{
-    width: 16px;
-    height: 16px;
+    width: 14px;
+    height: 14px;
     border-radius: 50%;
     margin: auto 0;
     outline: 1px solid grey;
@@ -126,9 +201,9 @@ a:hover, a:active{
     margin: 0 auto 30px auto;
 }
 #filterItemContainer{
-    width: 100%;
     display: grid;
     grid: 1fr / 1fr 1fr 1fr 1fr 1fr;
+    padding: 20px;
 }
 .filterItem{
     text-align: center;
@@ -141,4 +216,35 @@ a :hover{
 }
 .show{
     display: block;
+}
+
+#categoriesContainer{
+    display: flex;
+    margin: 20px 0px;
+    gap: 10px;
+}
+.categoryTag{
+    border: 1px solid grey;
+    background-color: var(--white);
+    padding: 5px 8px;
+    border-radius: 4px;
+}
+.categoryTag::before{
+    content: url('assets/folder_sm.png');
+    margin-right: 5px;
+    /* background-color: red; */
+}
+#notebookViewer{
+    display: flex;
+    justify-content:center;
+    /* width:fit-content; */
+    margin: auto 120px;
+    /* background-color: red; */
+}
+#pageSlider{
+    width: calc(100% - 350px);
+    margin: auto 175px;
+}
+#pageNumber{
+    text-align: center;
 }
