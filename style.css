@@ -2,6 +2,8 @@
 :root{
     --white: white;
     --mainBg: rgba(255,255,255);
+    --maxWidth: 960px;
+    --hoverColor: #DBEFFB;
 }
 *{
     margin: 0;
@@ -21,16 +23,16 @@ body{
 }
 main{
     margin: auto;
-    max-width: 1080px;
+    max-width: var(--maxWidth);
     background-color: var(--mainBg);
-    padding-top: 64px;
+    padding-top: 72px;
 
 }
 article{
-    margin: 40px 0px;
+    margin: 48px 0px;
 }
 figure{
-    max-width: 1080px;
+    max-width: var(--maxWidth);
     width: fit-content;
 }
 figcaption{
@@ -44,11 +46,36 @@ iframe{
     border: 1px solid grey;
 }
 nav{
-    /* padding: 10px; */
-    /* justify-content: space-around; */
     position: fixed;
-    /* background-color: skyblue; */
+    background-color: var(--mainBg);
     width: 100%;
+    border-bottom: 1px dotted grey;
+}
+#navItems{
+    display: flex;
+    justify-content: flex-start;
+    padding: 10px;
+    gap: 0.25rem;
+}
+#title{
+    font-family: "PP NeueBit";
+    margin: 0px;
+    font-size: 2rem;
+}
+#projTitle{
+    font-size: 1.3rem;
+    margin: auto 0;
+    visibility: hidden;
+}
+nav a{
+    display: flex;
+    gap: 0.5rem;
+}
+nav img{
+    height: 2rem;
+}
+nav a:hover{
+    background-color: var(--hoverColor);
 }
 
 h1{
@@ -64,14 +91,19 @@ h3{
     font-size: 1.5rem;
     margin: 10px 0;
 }
+#project p{
+    width: 50%;
+}
 
 button{
-    /* outline: 1px solid beige; */
-    background-color: white;
-    /* border-radius: 5px; */
+    background-color: var(--white);
     height: fit-content;
     border: none;
-    /* font-size: 1rem; */
+    text-align: center;
+}
+button:hover, button:active{
+    background-color: var(--hoverColor);
+    cursor: pointer;
 }
 
 a:link, a:visited{
@@ -85,12 +117,13 @@ a:hover, a:active{
 .gallery{
     display: grid;
     gap: 1rem;
-    margin-bottom: 1rem;
+    margin: 1.5rem 0;
 }
 .gallery figure{
-    border: 1px solid grey;
+    outline: 1px solid grey;
     background-color: var(--white);
     border-radius: 4px;
+    height: fit-content;
 }
 .gallery figure::before{
     display: block;
@@ -129,23 +162,18 @@ a:hover, a:active{
     visibility: hidden;
 }
 #left, #right{
-    padding: 0 10px 5px 10px;
     margin: auto 10px;
-}
-#left:hover, #right:hover{
-    background-color: beige;
-    outline: none;
-    cursor: pointer;
+    padding: 5px 10px;
 }
 
 .filterBtn{
     margin: 10px;
 }
 .filterBtn:hover {
-    background-color: #DBEFFB;
+    background-color: var(--hoverColor);
 }
 .filterBtn.active {
-    background-color: #DBEFFB;
+    background-color: var(--hoverColor);
     /* color: white; */
 }
 .filterBtn figure{
@@ -156,7 +184,7 @@ a:hover, a:active{
     overflow: scroll;
     background-color: lightgrey;
     margin: auto auto;
-    max-width: 800px;
+    max-width: var(--maxWidth);
     min-width: 400px;
     max-height: 400px;
     height: 400px;
@@ -192,7 +220,7 @@ a:hover, a:active{
 }
 #filterContainer{
     margin: auto auto;
-    max-width: 1080px;
+    max-width: var(--maxWidth);
 }
 #filterBtnContainer{
     display: flex;
@@ -202,12 +230,13 @@ a:hover, a:active{
 }
 #filterItemContainer{
     display: grid;
-    grid: 1fr / 1fr 1fr 1fr 1fr 1fr;
+    grid: 1fr / 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    gap: 2rem;
     padding: 20px;
 }
 .filterItem{
     text-align: center;
-    width: 100px;
+    width: 100%;
     height: 100%;
     display: none;
 }
@@ -238,7 +267,7 @@ a :hover{
     display: flex;
     justify-content:center;
     /* width:fit-content; */
-    margin: auto 120px;
+    margin: auto 80px;
     /* background-color: red; */
 }
 #pageSlider{

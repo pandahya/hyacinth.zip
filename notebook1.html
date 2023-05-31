@@ -15,8 +15,14 @@
 </style>
 <body id="notebookPage">
     <nav>
-        <a href="index.html"><img id="signature" src="./assets/signature.svg"></a>
-        <button id="moreBtn" onclick="toggleMore()">?</button>
+        <!-- <a href="index.html"><img id="signature" src="./assets/signature.svg"></a> -->
+        <div id="navItems">
+            <a href="index.html">
+                <img src="assets/folder.png"/>
+                <h1 id="title">hyacinth.zip</h1>
+            </a>
+            <!-- <h1 id="projTitle"> / notebook 01.2022 - 04.2023</h1> -->
+        </div>
     </nav>
     <div id="more">
         <h1>notebook</h1>
@@ -24,7 +30,7 @@
     </div>
     <main>
         <h3>Notebook 01.2022 - 04.2023</h3>
-        <section >
+        <section>
             <div id="notebookViewer">
                 <button id="left" onclick="prevPage()">&larr;</button>
                 <figure>
@@ -38,40 +44,6 @@
         
     </main>
 </body>
-<script>
-    let image = document.querySelector("#page");
-    let more = document.querySelector("#more");
-    let slider = document.querySelector("#pageSlider");
-    let numText = document.querySelector("#pageNumber");
-    let pageNum = 0;
-    let maxPage = 141;
-
-    function prevPage(){
-        if(pageNum > 0){
-            pageNum--;
-        }
-        image.src = `./assets/notebook_${pageNum}.jpg`;
-    }
-
-    function nextPage(){
-        if(pageNum < maxPage){
-            pageNum++;
-        }
-        image.src = `./assets/notebook_${pageNum}.jpg`;
-    }
-
-    function toggleMore(){
-        if(more.style.visibility == "visible"){
-            more.style.visibility = "hidden";
-        }else{
-            more.style.visibility = "visible";
-        }
-    }
-
-    slider.oninput = function(){
-        pageNum = this.value;
-        image.src = `./assets/notebook_${pageNum}.jpg`;
-        numText.innerHTML = "Page "+ this.value;
-    }
-</script>
+<script src="notebookPages.js"></script>
+<!-- <script src="navScroll.js"></script> -->
 </html>
