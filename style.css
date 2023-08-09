@@ -1,18 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-:root{
+@import url("https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+:root {
     --text: black;
     --white: white;
-    --mainBg: rgba(255,255,255);
+    --mainBg: rgba(255, 255, 255);
     --maxWidth: 960px;
-    --hoverColor: #DBEFFB;
+    --hoverColor: #dbeffb;
 }
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'PP Mori', sans-serif;
+    font-family: "PP Mori", sans-serif;
 }
-body{
+body {
     color: var(--text);
     width: 100vw;
     min-height: 100vh;
@@ -20,144 +20,147 @@ body{
     /* background-image: url('assets/habokidpix.jpg'); */
     /* background-size: contain; */
 }
-#notebookPage{
+#notebookPage {
     padding-bottom: 0px;
 }
-main{
+main {
     margin: auto;
     max-width: var(--maxWidth);
     background-color: var(--mainBg);
     padding-top: 72px;
-
 }
-article{
+article {
     margin: 48px 0px;
 }
-figure{
+figure {
     max-width: var(--maxWidth);
     width: fit-content;
 }
-figcaption{
+figcaption {
     color: var(--text);
     text-align: center;
-    padding: 10px;
+    padding: 5px;
 }
-img{
+img {
     width: 100%;
 }
-iframe{
+iframe {
     border: 1px solid grey;
 }
-nav{
+nav {
     position: fixed;
     background-color: var(--mainBg);
     width: 100%;
     border-bottom: 1px dotted grey;
 }
-#navItems{
+#navItems {
     display: flex;
     justify-content: flex-start;
     padding: 10px;
     gap: 0.25rem;
 }
-#title{
+#title {
     font-family: "PP NeueBit";
     margin: 0px;
     font-size: 2rem;
     color: var(--text);
 }
-#projTitle{
+#projTitle {
     font-size: 1.3rem;
     margin: auto 0;
     visibility: hidden;
 }
-nav a{
+nav a {
     display: flex;
     gap: 0.5rem;
 }
-nav img{
+nav img {
     height: 2rem;
 }
-nav a:hover{
+nav a:hover {
     background-color: var(--hoverColor);
 }
 
-h1{
+h1 {
     font-size: 2.5rem;
     /* background-color: red; */
     margin: 10px 0;
 }
-h2{
+h2 {
     font-size: 2rem;
     margin: 10px 0;
 }
-h3{
+h3 {
     font-size: 1.5rem;
     margin: 10px 0;
 }
-#project p{
+#project p {
     width: 50%;
 }
 
-button{
+button {
     background-color: var(--white);
     height: fit-content;
     border: none;
     text-align: center;
 }
-button:hover, button:active{
+button:hover,
+button:active {
     background-color: var(--hoverColor);
     cursor: pointer;
 }
 
-a:link, a:visited{
+a:link,
+a:visited {
     color: var(--text);
     text-decoration: none;
 }
-a:hover, a:active{
+a:hover,
+a:active {
     color: grey;
 }
 
-.gallery{
+.gallery {
     display: grid;
     gap: 1rem;
     margin: 1.5rem 0;
 }
-.gallery figure{
+.gallery figure {
     outline: 1px solid grey;
     background-color: var(--white);
     border-radius: 4px;
     height: fit-content;
 }
-.gallery figure::before{
+.gallery figure::before {
     display: block;
-    content: url('assets/windowbtns.png');
+    content: url("assets/windowbtns.png");
     padding: 8px 8px 4px 8px;
-    border-bottom: 1px dotted grey
+    border-bottom: 1px dotted grey;
 }
-.gallery figcaption{
-    border-top: 1px dotted grey
+.gallery figcaption {
+    padding: 10px;
+    border-top: 1px dotted grey;
 }
-.gallery iframe{
+.gallery iframe {
     border: none;
 }
-.two{
+.two {
     grid: 1fr / 1fr 1fr;
 }
-.three{
+.three {
     grid: 1fr / 1fr 1fr 1fr;
 }
 
-#signature{
+#signature {
     width: 150px;
 }
-#moreBtn{
+#moreBtn {
     /* outline: 1px solid black;
     border-radius: 5px; */
     padding: 2px;
     /* padding: 2px; */
 }
-#more{
+#more {
     position: fixed;
     width: 20vw;
     height: 20vh;
@@ -165,12 +168,13 @@ a:hover, a:active{
     background-color: white;
     visibility: hidden;
 }
-#left, #right{
+#left,
+#right {
     margin: auto 10px;
     padding: 5px 10px;
 }
 
-.filterBtn{
+.filterBtn {
     margin: 10px;
 }
 .filterBtn:hover {
@@ -180,7 +184,7 @@ a:hover, a:active{
     background-color: var(--hoverColor);
     /* color: white; */
 }
-.filterBtn figure{
+.filterBtn figure {
     margin: 10px;
     width: 75px;
 }
@@ -196,11 +200,11 @@ a:hover, a:active{
     border-radius: 10px;
     padding: 0px;
 }
-#fileWindowTopbar{
+#fileWindowTopbar {
     display: flex;
     gap: 10px;
     padding: 10px;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
     border-bottom: 1px dotted grey;
 }
 /* #fileWindowTopbar :first-child:hover{
@@ -215,72 +219,74 @@ a:hover, a:active{
     background-color: green;
     outline: 1px solid green;
 } */
-.circle{
+.circle {
     width: 14px;
     height: 14px;
     border-radius: 50%;
     margin: auto 0;
     outline: 1px solid grey;
 }
-#filterContainer{
+#filterContainer {
     margin: auto auto;
     max-width: var(--maxWidth);
 }
-#filterBtnContainer{
+#filterBtnContainer {
     display: flex;
     justify-content: center;
     width: fit-content;
     margin: 0 auto 30px auto;
 }
-#filterItemContainer{
+#filterItemContainer {
     display: grid;
     grid: 1fr / 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     gap: 2rem;
-    padding: 20px;
+    padding: 20px 40px;
+    /* outline: 1px solid red; */
 }
-.filterItem{
+.filterItem {
     text-align: center;
     width: 100%;
     height: 100%;
     display: none;
 }
-a:link, a:visited{
-    color: var()
+a:link,
+a:visited {
+    color: var();
 }
-a :hover{
+a :hover {
     cursor: pointer;
 }
-.show{
+.show {
     display: block;
 }
 
-#categoriesContainer{
+#categoriesContainer {
     display: flex;
     margin: 20px 0px;
     gap: 10px;
 }
-.categoryTag{
+.categoryTag {
     border: 1px solid grey;
     background-color: var(--white);
     padding: 5px 8px;
     border-radius: 4px;
 }
-.categoryTag::before{
-    content: url('assets/folder_sm.png');
+.categoryTag::before {
+    content: url("assets/folder_sm.png");
     margin-right: 5px;
     /* background-color: red; */
 }
-#notebookViewer{
+#notebookViewer {
     display: flex;
-    justify-content:center;
+    justify-content: center;
     /* width:fit-content; */
     margin: auto 80px;
     /* background-color: red; */
 }
-#pageSlider{
+#pageSlider {
     width: calc(100% - 350px);
     margin: auto 175px;
 }
-#pageNumber{
+#pageNumber {
     text-align: center;
 }

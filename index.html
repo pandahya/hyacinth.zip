@@ -1,67 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" href="assets/folder_sm.png" type="image/x-icon">
-    <title>hyacinth.zip</title>
-</head>
-<style>
-    #announcement h1{
-        font-family: "PP NeueBit";
-        margin-top: 60px;
-    }
-    #announcement{
-        text-align: center;
-        overflow: hidden;
-        font-size: 3.5rem;
-        /* position: fixed; */
-        background-color: white;
-        outline: 2px solid grey;
-        width: 100%;
-    }
-    #announcement a:link, a:visited{
-        font-family: "PP NeueBit";
-        color: cornflowerblue;
-    }
-    #announcement a:hover, a:active{
-        color: grey;
-    }
-</style>
-<body>
-    <nav>
-        <!-- <a href="index.html"><img id="signature" src="./assets/signature.svg"></a> -->
-        <div id="navItems">
-            <a href="index.html">
-                <img src="assets/folder.png"/>
-                <h1 id="title">hyacinth.zip</h1>
-            </a>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="style.css" />
+        <link
+            rel="shortcut icon"
+            href="assets/folder_sm.png"
+            type="image/x-icon"
+        />
+        <title>hyacinth.zip</title>
+    </head>
+    <style>
+        #announcement h1 {
+            font-family: "PP NeueBit";
+            margin-top: 60px;
+        }
+        #announcement {
+            text-align: center;
+            overflow: hidden;
+            font-size: 3.5rem;
+            /* position: fixed; */
+            background-color: white;
+            outline: 2px solid grey;
+            width: 100%;
+        }
+        #announcement a:link,
+        a:visited {
+            font-family: "PP NeueBit";
+            color: cornflowerblue;
+        }
+        #announcement a:hover,
+        a:active {
+            color: grey;
+        }
+    </style>
+    <body>
+        <nav>
+            <!-- <a href="index.html"><img id="signature" src="./assets/signature.svg"></a> -->
+            <div id="navItems">
+                <a href="index.html">
+                    <img src="assets/folder.png" />
+                    <h1 id="title">hyacinth.zip</h1>
+                </a>
+            </div>
+        </nav>
+        <div id="announcement">
+            <h1>
+                hyacinth.zip is currently under construction...
+                <br />
+                find my work at
+                <a href="https://www.hyacinthweng.com/"
+                    >hyacinthweng.com&nearr;</a
+                >
+            </h1>
         </div>
-    </nav>
-    <div id="announcement">
-        <h1>
-            hyacinth.zip is currently under construction...
-            <br>
-            find my work at <a href="https://www.hyacinthweng.com/">hyacinthweng.com&nearr;</a>
-        </h1>
-    </div>
-    <main id="filterContainer">
-        <div id="filterBtnContainer">
-            <button class="filterBtn active" onclick="filterSelection('all')">
-                <figure>
-                    <img src="assets/folder.png">
-                    <figcaption>all</figcaption>
-                </figure>
-            </button>
-            <button class="filterBtn" onclick="filterSelection('notebook')">
-                <figure>
-                    <img src="assets/folder.png">
-                    <figcaption>notebooks</figcaption>
-                </figure>
-            </button>
-            <!-- <button class="filterBtn" onclick="filterSelection('drawing')">
+        <main id="filterContainer">
+            <div id="filterBtnContainer">
+                <button
+                    class="filterBtn active"
+                    onclick="filterSelection('all')"
+                >
+                    <figure>
+                        <img src="assets/folder.png" />
+                        <figcaption>all</figcaption>
+                    </figure>
+                </button>
+                <button class="filterBtn" onclick="filterSelection('notebook')">
+                    <figure>
+                        <img src="assets/folder.png" />
+                        <figcaption>notebooks</figcaption>
+                    </figure>
+                </button>
+                <!-- <button class="filterBtn" onclick="filterSelection('drawing')">
                 <figure>
                     <img src="assets/folder.png">
                     <figcaption>drawings</figcaption>
@@ -73,137 +85,146 @@
                     <figcaption>paintings</figcaption>
                 </figure>
             </button> -->
-            <button class="filterBtn" onclick="filterSelection('bookart')">
-                <figure>
-                    <img src="assets/folder.png">
-                    <figcaption>book art</figcaption>
-                </figure>
-            </button>
-            <button class="filterBtn" onclick="filterSelection('netart')">
-                <figure>
-                    <img src="assets/folder.png">
-                    <figcaption>netart</figcaption>
-                </figure>
-            </button>
-            <button class="filterBtn" onclick="filterSelection('p5js')">
-                <figure>
-                    <img src="assets/folder.png">
-                    <figcaption>p5.js</figcaption>
-                </figure>
-            </button>
-            <button class="filterBtn" onclick="filterSelection('misc')">
-                <figure>
-                    <img src="assets/folder.png">
-                    <figcaption>misc</figcaption>
-                </figure>
-            </button>
-        </div>
-        <div id="fileWindow">
-            <div id="fileWindowTopbar">
-                <div class="circle"></div>
-                <div class="circle"></div>
-                <div class="circle"></div>
+                <button class="filterBtn" onclick="filterSelection('bookart')">
+                    <figure>
+                        <img src="assets/folder.png" />
+                        <figcaption>book art</figcaption>
+                    </figure>
+                </button>
+                <button class="filterBtn" onclick="filterSelection('netart')">
+                    <figure>
+                        <img src="assets/folder.png" />
+                        <figcaption>netart</figcaption>
+                    </figure>
+                </button>
+                <button class="filterBtn" onclick="filterSelection('p5js')">
+                    <figure>
+                        <img src="assets/folder.png" />
+                        <figcaption>p5.js</figcaption>
+                    </figure>
+                </button>
+                <button class="filterBtn" onclick="filterSelection('misc')">
+                    <figure>
+                        <img src="assets/folder.png" />
+                        <figcaption>misc</figcaption>
+                    </figure>
+                </button>
             </div>
-            <div id="filterItemContainer">
-                <figure class="filterItem notebook">
-                    <a href="notebook1.html">
-                        <img src="assets/notebook1_icon.png">
-                        <figcaption>01.2022 - 04.2023</figcaption>
-                    </a>
-                </figure>
-                <figure class="filterItem bookart p5js misc">
-                    <a href="kong.html">
-                        <img src="assets/kong_icon.png">
-                        <figcaption>空 [kōng]</figcaption>
-                    </a>
-                </figure>
-                <figure class="filterItem misc">
-                    <a href="businesscards.html">
-                        <img src="assets/businesscards_icon.png">
-                        <figcaption>business cards</figcaption>
-                    </a>
-                </figure>
-                <!-- <figure class="filterItem bookart misc">
+            <div id="fileWindow">
+                <div id="fileWindowTopbar">
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                </div>
+                <div id="filterItemContainer">
+                    <figure class="filterItem notebook">
+                        <a href="notebook2.html">
+                            <img src="assets/notebook2_icon.png" />
+                            <figcaption>05.2023 - current</figcaption>
+                        </a>
+                    </figure>
+                    <figure class="filterItem notebook">
+                        <a href="notebook1.html">
+                            <img src="assets/notebook1_icon.png" />
+                            <figcaption>01.2022 - 04.2023</figcaption>
+                        </a>
+                    </figure>
+                    <figure class="filterItem bookart p5js misc">
+                        <a href="kong.html">
+                            <img src="assets/kong_icon.png" />
+                            <figcaption>空 [kōng]</figcaption>
+                        </a>
+                    </figure>
+                    <figure class="filterItem misc">
+                        <a href="businesscards.html">
+                            <img src="assets/businesscards_icon.png" />
+                            <figcaption>business cards</figcaption>
+                        </a>
+                    </figure>
+                    <!-- <figure class="filterItem bookart misc">
                     <a href="wontons.html">
                         <img src="assets/wonton4.png">
                         <figcaption>wontons</figcaption>
                     </a>
                 </figure> -->
-                <!-- <figure class="filterItem misc">
+                    <!-- <figure class="filterItem misc">
                     <a href="pixelart.html">
                         <img src="assets/px_hyahead.jpg">
                         <figcaption>pixel art collection</figcaption>
                     </a>
                 </figure> -->
-                <figure class="filterItem netart">
-                    <a href="alexander.html">
-                        <img src="assets/alexander_icon.png">
-                        <figcaption>letters to alexander</figcaption>
-                    </a>
-                </figure>
-                <figure class="filterItem p5js">
-                    <a href="frogs.html">
-                        <img src="assets/facegen_icon.png">
-                        <figcaption>face generators</figcaption>
-                    </a>
-                </figure>
-                <figure class="filterItem p5js">
-                    <a href="moire.html">
-                        <img src="assets/moire_icon.png">
-                        <figcaption>moiré</figcaption>
-                    </a>
-                </figure>
-                <figure class="filterItem p5js">
-                    <a href="itchy.html">
-                        <img src="assets/itchy_icon.png">
-                        <figcaption>itchy</figcaption>
-                    </a>
-                </figure>
+                    <figure class="filterItem netart">
+                        <a href="alexander.html">
+                            <img src="assets/alexander_icon.png" />
+                            <figcaption>letters to alexander</figcaption>
+                        </a>
+                    </figure>
+                    <figure class="filterItem p5js">
+                        <a href="frogs.html">
+                            <img src="assets/facegen_icon.png" />
+                            <figcaption>face generators</figcaption>
+                        </a>
+                    </figure>
+                    <figure class="filterItem p5js">
+                        <a href="itchy.html">
+                            <img src="assets/itchy_icon.png" />
+                            <figcaption>itchy</figcaption>
+                        </a>
+                    </figure>
+                    <figure class="filterItem p5js">
+                        <a href="moire.html">
+                            <img src="assets/moire_icon.png" />
+                            <figcaption>moiré</figcaption>
+                        </a>
+                    </figure>
+                </div>
             </div>
-        </div>
-    </main>
-</body>
-<script>
-    //https://www.w3schools.com/howto/howto_js_filter_elements.asp
-    filterSelection('all');
-    function filterSelection(c) {
-    let x, i;
-    x = document.getElementsByClassName("filterItem");
-    if (c == "all") c = "";
-    for (i = 0; i < x.length; i++) {
-        removeClass(x[i], "show");
-        if (x[i].className.indexOf(c) > -1) addClass(x[i], "show");
-    }
-    }
-    function addClass(element, name){
-        let i, arr1, arr2;
-        arr1 = element.className.split(" ");
-        arr2 = name.split(" ");
-        for(i = 0; i < arr2.length; i++){
-            if(arr1.indexOf(arr2[i]) == -1){
-                element.className += " " + arr2[i];
+        </main>
+    </body>
+    <script>
+        //https://www.w3schools.com/howto/howto_js_filter_elements.asp
+        filterSelection("all");
+        function filterSelection(c) {
+            let x, i;
+            x = document.getElementsByClassName("filterItem");
+            if (c == "all") c = "";
+            for (i = 0; i < x.length; i++) {
+                removeClass(x[i], "show");
+                if (x[i].className.indexOf(c) > -1) addClass(x[i], "show");
             }
         }
-    }
-    function removeClass(element, name){
-        let i, arr1, arr2;
-        arr1 = element.className.split(" ");
-        arr2 = name.split(" ");
-        for (i = 0; i < arr2.length; i++) {
-            while (arr1.indexOf(arr2[i]) > -1) {
-            arr1.splice(arr1.indexOf(arr2[i]), 1);
+        function addClass(element, name) {
+            let i, arr1, arr2;
+            arr1 = element.className.split(" ");
+            arr2 = name.split(" ");
+            for (i = 0; i < arr2.length; i++) {
+                if (arr1.indexOf(arr2[i]) == -1) {
+                    element.className += " " + arr2[i];
+                }
             }
         }
-        element.className = arr1.join(" ");
-    }
-    let btnContainer = document.getElementById("filterBtnContainer");
-    let btns = btnContainer.getElementsByClassName("filterBtn");
-    for (let i = 0; i < btns.length; i++) {
-        btns[i].addEventListener("click", function() {
-            let current = document.getElementsByClassName("active");
-            current[0].className = current[0].className.replace(" active", "");
-            this.className += " active";
-        });
-    }
-</script>
+        function removeClass(element, name) {
+            let i, arr1, arr2;
+            arr1 = element.className.split(" ");
+            arr2 = name.split(" ");
+            for (i = 0; i < arr2.length; i++) {
+                while (arr1.indexOf(arr2[i]) > -1) {
+                    arr1.splice(arr1.indexOf(arr2[i]), 1);
+                }
+            }
+            element.className = arr1.join(" ");
+        }
+        let btnContainer = document.getElementById("filterBtnContainer");
+        let btns = btnContainer.getElementsByClassName("filterBtn");
+        for (let i = 0; i < btns.length; i++) {
+            btns[i].addEventListener("click", function () {
+                let current = document.getElementsByClassName("active");
+                current[0].className = current[0].className.replace(
+                    " active",
+                    ""
+                );
+                this.className += " active";
+            });
+        }
+    </script>
 </html>
