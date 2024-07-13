@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="../n_style.css" />
+        <link
+            rel="shortcut icon"
+            href="../assets/folder_sm.png"
+            type="image/x-icon"
+        />
+        <title>hyacinth.zip / trash</title>
+    </head>
+    <style>
+        .trash-img {
+            width: 30%;
+        }
+    </style>
+    <body id="trash">
+        <nav>
+            <div id="navItems">
+                <a href="../n_index.html">
+                    <img src="../assets/folder.png" />
+                    <h1 id="title">hyacinth.zip</h1>
+                </a>
+            </div>
+        </nav>
+        <main>
+            <figure>
+                <img
+                    class="trash-img"
+                    src="../assets/trash_stickyrice_front.png"
+                />
+            </figure>
+        </main>
+    </body>
+    <script>
+        let trashs = document.querySelectorAll(".trash-img");
+        trashs.forEach(function (trash) {
+            trash.addEventListener("click", function () {
+                flipImg(trash);
+            });
+        });
+        function flipImg(trash) {
+            let imgSrc = trash.src;
+            if (imgSrc.includes("front")) {
+                imgSrc = imgSrc.replace("front", "back");
+                // console.log(imgSrc);
+            } else {
+                imgSrc = imgSrc.replace("back", "front");
+                // console.log(imgSrc);
+            }
+            trash.src = imgSrc;
+        }
+    </script>
+</html>
