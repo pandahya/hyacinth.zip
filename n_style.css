@@ -1,0 +1,159 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+:root {
+    --text: black;
+    --white: white;
+    --mainBg: rgba(255, 255, 255);
+    --maxWidth: 960px;
+    --hoverColor: #dbeffb;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "PP Mori", sans-serif;
+}
+a:link,
+a:visited {
+    color: slategrey;
+    text-decoration: none;
+}
+a:hover,
+a:active {
+    /* color: var(--white); */
+    /* background-color: slategrey; */
+}
+body {
+    color: var(--text);
+    width: 100vw;
+    min-height: 100vh;
+    /* padding-bottom: 120px; */
+    /* background-image: url('assets/habokidpix.jpg'); */
+    /* background-size: contain; */
+}
+#new-home {
+    padding-bottom: 0px;
+}
+main {
+    /* margin: auto; */
+    /* max-width: var(--maxWidth); */
+    background-color: var(--mainBg);
+    padding-top: 72px;
+}
+#title {
+    font-family: "PP NeueBit";
+    margin: 0px;
+    font-size: 2rem;
+    color: var(--text);
+}
+nav {
+    position: fixed;
+    background-color: var(--mainBg);
+    width: 100%;
+    border-bottom: 1px dotted grey;
+}
+#navItems {
+    display: flex;
+    justify-content: flex-start;
+    padding: 8px;
+    gap: 0.25rem;
+}
+#title {
+    font-family: "PP NeueBit";
+    margin: 0px;
+    font-size: 2rem;
+    color: var(--text);
+}
+nav a {
+    display: flex;
+    gap: 0.5rem;
+}
+nav img {
+    height: 2rem;
+}
+nav a:hover {
+    background-color: var(--hoverColor);
+}
+
+button {
+    background-color: var(--white);
+    border: none;
+    padding: 0px;
+}
+.folder-icon {
+    /* margin: 20px; */
+}
+.folder {
+    width: 400px;
+
+    /* padding: 24px; */
+    outline: 1px solid black;
+    background-color: var(--white);
+    display: none;
+    position: absolute;
+}
+.folder-header {
+    display: flex;
+    /* margin-bottom: 24px; */
+    padding: 24px;
+    /* background-color: red; */
+}
+.folder-header :first-child {
+    margin-right: auto;
+}
+.folder-header button {
+    width: 20px;
+    height: 20px;
+    text-align: center;
+}
+.folder-header h1 {
+    font-size: 32px;
+    font-family: "PP NeueBit";
+}
+.folder-header img {
+    margin-left: 16px;
+}
+.infolder {
+    display: grid;
+    gap: 24px;
+    margin: 0px 24px 24px 24px;
+    max-height: 400px;
+    overflow-y: scroll;
+    /* background-color: green; */
+}
+.infolder-icon a {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+}
+.infolder-icon figcaption {
+    margin-top: 8px;
+}
+.infolder-icon h1 {
+    font-size: 1.2rem;
+}
+.infolder-icon h2 {
+    font-size: 1rem;
+    font-weight: 400;
+    font-style: italic;
+}
+.infolder-icon img {
+    width: 80px;
+}
+.folder-page main {
+    display: grid;
+    grid: 1fr 1fr 1fr 1fr 1fr / 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    max-width: none;
+    gap: 16px;
+    padding: 66px 32px 32px 32px;
+    max-height: calc(100vh);
+    overflow: hidden;
+}
+.folderpage-work-icon a {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    margin: 16px;
+}
+.folderpage-work-icon img {
+    width: 80px;
+}
