@@ -45,9 +45,17 @@
     *{
         margin: 0;
         padding: 0;
+        box-sizing: border-box;
     }
-    body{
-        padding: 0 240px;
+    html{
+        scroll-behavior: smooth;
+    }
+    main{
+        padding: var(--page-padding-top) var(--page-padding-side);
+    }
+    section{
+        margin-bottom: 80px;
+        scroll-margin-top: var(--page-padding-top);
     }
     article{
         margin: 40px auto;
@@ -73,13 +81,25 @@
         width: 100%;
         margin: auto;
     }
+    header{
+        background-color: var(--backgroundColor);
+        position: fixed;
+        padding: 40px var(--page-padding-side) 8px var(--page-padding-side);
+        width: 100%;
+        /* box-shadow: 0px 8px 8px rgba(255, 255, 255, 0.5); */
+    }
     nav{
+        padding: 16px 0;
         display: grid;
         grid: 1fr / 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
         text-align: center;
     }
+    nav h2{
+        font-size: 16px;
+    }
     nav p{
         text-transform: capitalize;
+        font-size: 12px;
     }
     a{
         color: var(--textColor);
@@ -92,6 +112,47 @@
         display: grid;
         grid: 0.5fr 0.5fr / 1fr 1fr 1fr 1fr 1fr 1fr;
     }
+    .month-grid{
+        display: grid;
+        grid: 0.1fr 1fr 1fr 1fr 1fr 1fr 0.1fr / 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    }
+    .month-grid p{
+        font-family: Arial, Helvetica, sans-serif;
+        text-transform: uppercase;
+        text-align: center;
+    }
+    .empty{
+        border: 1px solid black;
+    }
+    .day{
+        height: 100px;
+        background-size: cover;
+        border: 1px solid black;
+    }
+    .day p{
+        opacity: 50%;
+        text-align: left;
+        padding: 4px;
+    }
+</style>
+<style>
+    /* mobile */
+    @media screen and (max-width: 600px) {
+        :root{
+            --page-padding-side: 24px;
+            --page-padding-top: 160px;
+        }
+        header span{
+            display: none;
+        }
+    }
+    /* desktop */
+    @media screen and (min-width: 601px){
+        :root{
+            --page-padding-side: 240px;
+            --page-padding-top: 160px;
+        }
+    }
 </style>
 <body>
     <header>
@@ -100,25 +161,25 @@
             <a href="#january">
                 <div id="jan-nav">
                     <h2>01</h2>
-                    <p>january</p>
+                    <p>jan<span>uary</span></p>
                 </div>
             </a>
             <a href="#february">
                 <div id="feb-nav">
                     <h2>02</h2>
-                    <p>february</p>
+                    <p>feb<span>ruary</span></p>
                 </div>
             </a>
             <a href="#march">
                 <div id="mar-nav">
                     <h2>03</h2>
-                    <p>march</p>
+                    <p>mar<span>ch</span></p>
                 </div>
             </a>
             <a href="#april">
                 <div id="apr-nav">
                     <h2>04</h2>
-                    <p>april</p>
+                    <p>apr<span>il</span></p>
                 </div>
             </a>
             <a href="#may">
@@ -130,43 +191,43 @@
             <a href="#june">
                 <div id="jun-nav">
                     <h2>06</h2>
-                    <p>june</p>
+                    <p>jun<span>e</span></p>
                 </div>
             </a>
             <a href="#july">
                 <div id="jul-nav">
                     <h2>07</h2>
-                    <p>july</p>
+                    <p>jul<span>y</span></p>
                 </div>
             </a>
             <a href="#august">
                 <div id="aug-nav">
                     <h2>08</h2>
-                    <p>august</p>
+                    <p>aug<span>ust</span></p>
                 </div>
             </a>
             <a href="#september">
                 <div id="sep-nav">
                     <h2>09</h2>
-                    <p>september</p>
+                    <p>sep<span>tember</span></p>
                 </div>
             </a>
             <a href="#october">
                 <div id="oct-nav">
                     <h2>10</h2>
-                    <p>october</p>
+                    <p>oct<span>ober</span></p>
                 </div>
             </a>
             <a href="#november">
                 <div id="nov-nav">
                     <h2>11</h2>
-                    <p>november</p>
+                    <p>nov<span>ember</span></p>
                 </div>
             </a>
             <a href="#december">
                 <div id="dec-nav">
                     <h2>12</h2>
-                    <p>december</p>
+                    <p>dec<span>ember</span></p>
                 </div>
             </a>
         </nav>
@@ -198,6 +259,35 @@
                 <img src="assets/MoM/October_cover.jpg">
                 <img src="assets/MoM/November_cover.jpg">
                 <img src="assets/MoM/December_cover.jpg">
+            </div>
+        </section>
+        <section id="january" class="month">
+            <figure><img src="assets/MoM/January_banner.jpg"></figure>
+            <article>
+                <h1>Her first love was the girl next door, mine was sketching.</h1>
+                <br />
+                <p>
+                     I started learning art by sketching. It’s the quickest and most accessible way to train the fundamentals. So when I started planning this, the first thing I wanted to do was sketch. I haven’t seriously sat down with just a pencil and paper in years at least, so I wanted to start the year off going back to my roots.
+                </p>
+                <br />
+                <p>
+                    I bought this tear off calendar from Muji. Using this as my timekeeper, I figure I’ll have a foolproof way of...
+                </p>
+            </article>
+            <div id="january-grid" class="month-grid">
+                <p>sun</p>
+                <p>mon</p>
+                <p>tue</p>
+                <p>wed</p>
+                <p>thu</p>
+                <p>fri</p>
+                <p>sat</p>
+                <div class="empty"></div>
+                <div class="empty"></div>
+                <div class="empty"></div>
+                <div class="day" style="background-image: url(assets/notebook2_24.jpg);">
+                    <p>1</p>
+                </div>
             </div>
         </section>
     </main>
