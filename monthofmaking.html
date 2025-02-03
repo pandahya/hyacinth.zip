@@ -91,7 +91,8 @@
     nav{
         padding: 16px 0;
         display: grid;
-        grid: 1fr / 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+        grid-template-columns: repeat(12, 1fr);
         text-align: center;
     }
     nav h2{
@@ -110,11 +111,11 @@
     }
     #month-covers{
         display: grid;
-        grid: 0.5fr 0.5fr / 1fr 1fr 1fr 1fr 1fr 1fr;
     }
     .month-grid{
         display: grid;
-        grid: 0.1fr 1fr 1fr 1fr 1fr 1fr 0.1fr / 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 0.1fr repeat(5, 1fr) 0.1fr;
+        grid-template-columns: repeat(7, 1fr);
     }
     .month-grid p{
         font-family: Arial, Helvetica, sans-serif;
@@ -145,12 +146,20 @@
         header span{
             display: none;
         }
+        #month-covers{
+            grid-template-rows: repeat(3, 0.5fr);
+            grid-template-columns: repeat(4, 1fr);
+        }
     }
     /* desktop */
     @media screen and (min-width: 601px){
         :root{
             --page-padding-side: 240px;
             --page-padding-top: 160px;
+        }
+        #month-covers{
+            grid-template-rows: repeat(2, 0.5fr);
+            grid-template-columns: repeat(6, 1fr);
         }
     }
 </style>
@@ -273,7 +282,7 @@
                 <p>
                     I'd bought a tear off calendar from Muji for the new year. While contemplating what to do with the torn off pages, I found it to be the perfect medium for a daily sketch. With a new page every day, the date stamped cleanly and unchangeably, I have exactly twenty four hours time with it before it loses value.
             </article>
-            <div id="january-grid" class="month-grid">
+            <div id="january-grid" class="month-grid 31">
                 <p>sun</p>
                 <p>mon</p>
                 <p>tue</p>
@@ -382,4 +391,7 @@
         </section>
     </main>
 </body>
+<script>
+
+</script>
 </html>
