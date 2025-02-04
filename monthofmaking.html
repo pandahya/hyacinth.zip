@@ -54,7 +54,7 @@
         padding: var(--page-padding-top) var(--page-padding-side);
     }
     section{
-        margin-bottom: 80px;
+        margin-bottom: 160px;
         scroll-margin-top: var(--page-padding-top);
     }
     article{
@@ -131,7 +131,9 @@
         border: 1px solid black;
     }
     .day p{
-        opacity: 50%;
+        color: white;
+        mix-blend-mode: exclusion;
+        opacity: 75%;
         text-align: left;
         padding: 4px;
     }
@@ -146,6 +148,9 @@
         header span{
             display: none;
         }
+        .mobile-hidden{
+            display: none;
+        }
         #month-covers{
             grid-template-rows: repeat(3, 0.5fr);
             grid-template-columns: repeat(4, 1fr);
@@ -156,6 +161,9 @@
         :root{
             --page-padding-side: 240px;
             --page-padding-top: 160px;
+        }
+        .desktop-hidden{
+            display: none;
         }
         #month-covers{
             grid-template-rows: repeat(2, 0.5fr);
@@ -271,7 +279,7 @@
             </div>
         </section>
         <section id="january" class="month">
-            <figure><img src="assets/MoM/January_banner.jpg"></figure>
+            <figure><img class="mobile-hidden" src="assets/MoM/January_banner.jpg"><img class="desktop-hidden" src="assets/MoM/January_banner_sm.jpg"></figure>
             <article>
                 <!-- <h1>some sentence about sketching here</h1>
                 <br /> -->
@@ -293,105 +301,87 @@
                 <div class="empty"></div>
                 <div class="empty"></div>
                 <div class="empty"></div>
-                <div class="day" style="background-image: url(assets/notebook2_24.jpg);">
-                    <p>1</p>
-                </div>
-                <div class="day" style="background-image: url();">
-                    <p>2</p>
-                </div>
-                <div class="day" style="background-image: url();">
-                    <p>3</p>
-                </div>
-                <div class="day" style="background-image: url();">
-                    <p>4</p>
-                </div>
-                <div class="day" style="background-image: url();">
-                    <p>5</p>
-                </div>
-                <div class="day" style="background-image: url();">
-                    <p>6</p>
-                </div>
-                <div class="day" style="background-image: url();">
-                    <p>7</p>
-                </div>
-                <div class="day" style="background-image: url();">
-                    <p>8</p>
-                </div>
-                <div class="day" style="background-image: url();">
-                    <p>9</p>
-                </div>
-                <div class="day" style="background-image: url();">
-                    <p>10</p>
-                </div>
-                <div class="day" style="background-image: url();">
-                    <p>11</p>
-                </div>
-                <div class="day" style="background-image: url();">
-                    <p>12</p>
-                </div>
-                <div class="day" style="background-image: url();">
-                    <p>13</p>
-                </div>
-                <div class="day" style="background-image: url();">
-                    <p>14</p>
-                </div>
-                <div class="day" style="background-image: url();">
-                    <p>15</p>
-                </div>
-                <div class="day" style="background-image: url();">
-                    <p>16</p>
-                </div>
-                <div class="day" style="background-image: url();">
-                    <p>17</p>
-                </div>
-                <div class="day" style="background-image: url();">
-                    <p>18</p>
-                </div>
-                <div class="day" style="background-image: url();">
-                    <p>19</p>
-                </div>
-                <div class="day" style="background-image: url();">
-                    <p>20</p>
-                </div>
-                <div class="day" style="background-image: url();">
-                    <p>21</p>
-                </div>
-                <div class="day" style="background-image: url();">
-                    <p>22</p>
-                </div>
-                <div class="day" style="background-image: url();">
-                    <p>23</p>
-                </div>
-                <div class="day" style="background-image: url();">
-                    <p>24</p>
-                </div>
-                <div class="day" style="background-image: url();">
-                    <p>25</p>
-                </div>
-                <div class="day" style="background-image: url();">
-                    <p>26</p>
-                </div>
-                <div class="day" style="background-image: url();">
-                    <p>27</p>
-                </div>
-                <div class="day" style="background-image: url();">
-                    <p>28</p>
-                </div>
-                <div class="day" style="background-image: url();">
-                    <p>29</p>
-                </div>
-                <div class="day" style="background-image: url();">
-                    <p>30</p>
-                </div>
-                <div class="day" style="background-image: url();">
-                    <p>31</p>
-                </div>
+            </div>
+        </section>
+        <section id="february" class="month">
+            <figure><img src="assets/MoM/February_banner.jpg"></figure>
+            <article>
+                <!-- <h1>Something new happens every day, you just have to look for it.</h1> -->
+                <p>
+                    Poster design was one of the first things I started with when learning graphic design, but it always felt like something I needed to practice more. To make this more digestible, I focused on the idea of <i>event posters</i>. I want to create a poster about something that happens every day, no matter the size of the "event".
+                </p>
+                <br>
+                <p>
+                    My hope for this is to a) practice graphic design in a meaningful way and b) try to break from the routine mindset of a monotonous daily life. By making myself notice the smaller happenings, I can hopefully live a more present life and be more appreciative of more intimiate, fleeting moments.
+                </p>
+            </article>
+            <div id="february-grid" class="month-grid 28">
+                <p>sun</p>
+                <p>mon</p>
+                <p>tue</p>
+                <p>wed</p>
+                <p>thu</p>
+                <p>fri</p>
+                <p>sat</p>
+                <div class="empty"></div>
+                <div class="empty"></div>
+                <div class="empty"></div>
+                <div class="empty"></div>
+                <div class="empty"></div>
                 <div class="empty"></div>
             </div>
         </section>
     </main>
 </body>
 <script>
+    //get all month grids
+    const monthGrid = document.querySelectorAll(".month-grid");
+    let days = 0;
 
+    monthGrid.forEach((month) => {
+        //for each month, get the number of empty days in the beginning (manually entered)
+        let startEmpty = month.querySelectorAll(".empty").length;
+
+        //set days variable to the class number
+        if(month.classList.contains("31")){
+            days = 31;
+        }else if(month.classList.contains("30")){
+            days = 30;
+        }else if(month.classList.contains(28)){
+            days = 28;
+        }
+        //for every day(var), create a new day div element, set the background image, and add the day text
+        for(let i=1;i<days+1;i++){
+            let newDay = document.createElement("div");
+            let dayNum = document.createElement("p");
+            newDay.classList.add("day");
+            newDay.style.backgroundImage = `url(assets/MoM/${month.id}_${i}.jpg)`;
+            newDay.addEventListener('click', () => openModal(i));
+            dayNum.innerHTML = i;
+
+            newDay.appendChild(dayNum);
+            month.appendChild(newDay);
+        }
+
+        //to count the number of empty days needed at the end to fill out calendar grid
+        //first add the number of empty days in the beginning + total days
+        let endEmpty = startEmpty + days;
+        //if that number is not divisible by 7, add 1 to it (until it is)
+        if(endEmpty % 7 !== 0){
+            endEmpty ++;
+        }
+        //subtract the number of empty days in the beginning + total days to get the number of empty days needed at the end
+        endEmpty -= startEmpty + days;
+        //create a new div element per each empty day
+        for(let i=0;i<endEmpty;i++){
+            let newEmpty = document.createElement("div");
+            newEmpty.classList.add("empty");
+            month.appendChild(newEmpty);
+        }
+    });
+
+    function openModal(imgNum){
+        console.log("openModal function: " + imgNum);
+    }
 </script>
 </html>
