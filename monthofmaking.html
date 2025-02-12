@@ -129,6 +129,7 @@
         height: 100px;
         background-size: cover;
         border: 1px solid black;
+        cursor: pointer;
     }
     .day p{
         color: white;
@@ -136,6 +137,40 @@
         opacity: 75%;
         text-align: left;
         padding: 4px;
+    }
+    #modal{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 5;
+    }
+    #modal-img{
+        max-height: 80vh;
+        max-width: 80vw;
+        width: auto;
+        height: auto;
+        margin-top: 5vh;
+    }
+    #btn-close-modal{
+        position: fixed;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        border: none;
+        right: 10vw;
+        top: 20px;
+        cursor: pointer;
+    }
+    #modal-figcaption{
+        text-transform: capitalize;
+        color: var(--backgroundColor);
+    }
+    figcaption{
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
     }
 </style>
 <style>
@@ -304,7 +339,7 @@
             </div>
         </section>
         <section id="february" class="month">
-            <figure><img src="assets/MoM/February_banner.jpg"></figure>
+            <figure><img class="mobile-hidden" src="assets/MoM/February_banner.jpg"><img class="desktop-hidden" src="assets/MoM/February_banner_sm.jpg"></figure>
             <article>
                 <!-- <h1>Something new happens every day, you just have to look for it.</h1> -->
                 <p>
@@ -332,6 +367,19 @@
             </div>
         </section>
     </main>
+    <div id="modal" style="display: none;">
+        <figure>
+            <button
+                id="btn-close-modal"
+                type="button"
+                onclick="closeModal()"
+            >
+                x
+            </button>
+            <img id="modal-img" src="" alt=""/>
+            <figcaption id="modal-figcaption"></figcaption>
+        </figure>
+    </div>
 </body>
 <script>
     //get all month grids
@@ -356,7 +404,7 @@
             let dayNum = document.createElement("p");
             newDay.classList.add("day");
             newDay.style.backgroundImage = `url(assets/MoM/${month.id}_${i}.jpg)`;
-            newDay.addEventListener('click', () => openModal(i));
+            newDay.addEventListener('click', () => openModal(newDay, i));
             dayNum.innerHTML = i;
 
             newDay.appendChild(dayNum);
@@ -380,8 +428,20 @@
         }
     });
 
-    function openModal(imgNum){
-        console.log("openModal function: " + imgNum);
+    const modal = document.querySelector("#modal");
+    const modalImg = document.querySelector("#modal-img");
+    const modalFigcaption = document.querySelector("#modal-figcaption");
+    function openModal(day, imgNum){
+        // console.log("openModal function: " + imgNum);
+        modal.style.display = "block";
+        let thisMonth = day.parentElement.id;
+        let thisMonthName = day.parentElement.parentElement.id;
+        modalImg.src = `./assets/MoM/${thisMonth}_${imgNum}.jpg`;
+        modalFigcaption.textContent = `${thisMonthName} ${imgNum}, 2025`;
+        // console.log(thisMonthName);
+    }
+    function closeModal(){
+        modal.style.display = "none";
     }
 </script>
 </html>
