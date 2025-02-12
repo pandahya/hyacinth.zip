@@ -4,227 +4,431 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="./n_style.css" />
         <link
             rel="shortcut icon"
-            href="assets/folder_sm.png"
+            href="./assets/folder_sm.png"
             type="image/x-icon"
         />
         <title>hyacinth.zip</title>
     </head>
     <style>
-        #announcement h1 {
-            font-family: "PP NeueBit";
-            margin-top: 60px;
-        }
-        #announcement {
-            text-align: center;
+        main {
+            display: grid;
+            grid: repeat(5, 1fr) / repeat(8, 1fr);
+            max-width: none;
+            gap: 16px;
+            padding: 66px 32px 32px 32px;
+            max-height: calc(100vh);
             overflow: hidden;
-            font-size: 3.5rem;
-            /* position: fixed; */
-            background-color: white;
-            outline: 2px solid grey;
-            width: 100%;
         }
-        #announcement a:link,
-        a:visited {
-            font-family: "PP NeueBit";
-            color: cornflowerblue;
+        .folder-icon img {
+            width: 80px;
         }
-        #announcement a:hover,
-        a:active {
-            color: grey;
+        #monthofmaking{
+            grid-area: 1 / 5;
+            text-align: center;
+        }
+        #btn-misc-folder {
+            grid-area: 2 / 1;
+        }
+        #btn-drawpaint-folder {
+            grid-area: 3 / 3;
+        }
+        #btn-p5-folder {
+            grid-area: 2 / 7;
+        }
+        #btn-web-folder {
+            grid-area: 3 / 6;
+        }
+        #btn-hyacinth-folder {
+            grid-area: 1 / 8;
+        }
+        #btn-trash-folder {
+            grid-area: 5 / 1;
         }
     </style>
-    <body>
+    <body id="new-home">
         <nav>
-            <!-- <a href="index.html"><img id="signature" src="./assets/signature.svg"></a> -->
             <div id="navItems">
-                <a href="index.html">
-                    <img src="assets/folder.png" />
+                <a href="n_index.html">
+                    <img src="./assets/folder.png" />
                     <h1 id="title">hyacinth.zip</h1>
                 </a>
             </div>
         </nav>
-        <div id="announcement">
-            <h1>
-                hyacinth.zip is currently under construction...
-                <br />
-                find my work at
-                <a href="https://www.hyacinthweng.com/"
-                    >hyacinthweng.com&nearr;</a
-                >
-            </h1>
-        </div>
-        <main id="filterContainer">
-            <div id="filterBtnContainer">
-                <button
-                    class="filterBtn active"
-                    onclick="filterSelection('all')"
-                >
-                    <figure>
-                        <img src="assets/folder.png" />
-                        <figcaption>all</figcaption>
-                    </figure>
-                </button>
-                <button class="filterBtn" onclick="filterSelection('notebook')">
-                    <figure>
-                        <img src="assets/folder.png" />
-                        <figcaption>notebooks</figcaption>
-                    </figure>
-                </button>
-                <!-- <button class="filterBtn" onclick="filterSelection('drawing')">
-                <figure>
-                    <img src="assets/folder.png">
-                    <figcaption>drawings</figcaption>
-                </figure>
-            </button>
-            <button class="filterBtn" onclick="filterSelection('painting')">
-                <figure>
-                    <img src="assets/folder.png">
-                    <figcaption>paintings</figcaption>
-                </figure>
-            </button> -->
-                <button class="filterBtn" onclick="filterSelection('bookart')">
-                    <figure>
-                        <img src="assets/folder.png" />
-                        <figcaption>book art</figcaption>
-                    </figure>
-                </button>
-                <button class="filterBtn" onclick="filterSelection('netart')">
-                    <figure>
-                        <img src="assets/folder.png" />
-                        <figcaption>netart</figcaption>
-                    </figure>
-                </button>
-                <button class="filterBtn" onclick="filterSelection('p5js')">
-                    <figure>
-                        <img src="assets/folder.png" />
-                        <figcaption>p5.js</figcaption>
-                    </figure>
-                </button>
-                <button class="filterBtn" onclick="filterSelection('misc')">
-                    <figure>
-                        <img src="assets/folder.png" />
-                        <figcaption>misc</figcaption>
-                    </figure>
-                </button>
+        <main>
+            <div
+                id="monthofmaking"
+                class="folder-icon"
+                width="100%"
+            >
+                <a href="monthofmaking.html">
+                    <img src="./assets/mom/MoM_cover.jpg" />
+                </a>
+                <figcaption>Month of Making 2025</figcaption>
             </div>
-            <div id="fileWindow">
-                <div id="fileWindowTopbar">
-                    <div class="circle"></div>
-                    <div class="circle"></div>
-                    <div class="circle"></div>
+            <button
+                id="btn-notebooks-folder"
+                class="folder-icon"
+                type="button"
+                name="open notebooks folder"
+            >
+                <img src="./assets/notebook1_icon.png" />
+                <figcaption>Notebooks</figcaption>
+            </button>
+            <button
+                id="btn-misc-folder"
+                class="folder-icon"
+                type="button"
+                name="open misc folder"
+            >
+                <img src="./assets/folder.png" />
+                <figcaption>misc</figcaption>
+            </button>
+            <button
+                id="btn-drawpaint-folder"
+                class="folder-icon"
+                type="button"
+                name="open drawings/paintings folder"
+            >
+                <img src="./assets/folder.png" />
+                <figcaption>drawings/paintings</figcaption>
+            </button>
+            <button
+                id="btn-p5-folder"
+                class="folder-icon"
+                type="button"
+                name="open p5js folder"
+            >
+                <img src="./assets/folder.png" />
+                <figcaption>p5.js play</figcaption>
+            </button>
+            <button
+                id="btn-web-folder"
+                class="folder-icon"
+                type="button"
+                name="open web folder"
+            >
+                <img src="./assets/folder.png" />
+                <figcaption>web stuff</figcaption>
+            </button>
+            <button
+                id="btn-hyacinth-folder"
+                class="folder-icon"
+                type="button"
+                name="open hyacinth folder"
+            >
+                <img src="./assets/judgy_hya.png" />
+                <figcaption>Hyacinth ✿</figcaption>
+            </button>
+            <button
+                id="btn-trash-folder"
+                class="folder-icon"
+                type="button"
+                name="open trash folder"
+            >
+                <img src="./assets/garbage.png" />
+                <figcaption>trash</figcaption>
+            </button>
+        </main>
+        <div id="folders-space">
+            <div class="folder" id="notebooks-folder">
+                <div class="folder-header" id="notebooks-folder-header">
+                    <h1>Notebooks</h1>
+                    <button type="button" name="goto notebooks page">
+                        <a href="./folder/notebooks.html">⤢</a>
+                    </button>
+                    <button
+                        class="close-folder-btn"
+                        id="close-notebooks-folder"
+                        type="button"
+                        name="close notebooks folder"
+                    >
+                        ✕
+                    </button>
                 </div>
-                <div id="filterItemContainer">
-                    <figure class="filterItem notebook">
-                        <a href="notebook2.html">
-                            <img src="assets/notebook2_icon.png" />
-                            <figcaption>05.2023 - current</figcaption>
+                <div class="infolder">
+                    <figure class="infolder-icon">
+                        <a href="./work/notebook1.html">
+                            <img src="./assets/notebook1_icon.png" />
+                            <figcaption>
+                                <p>Notebook 1</p>
+                                <p>2022.01 - 2023.04</p>
+                            </figcaption>
                         </a>
                     </figure>
-                    <figure class="filterItem notebook">
-                        <a href="notebook1.html">
-                            <img src="assets/notebook1_icon.png" />
-                            <figcaption>01.2022 - 04.2023</figcaption>
+                    <figure class="infolder-icon">
+                        <a href="./work/notebook2.html">
+                            <img src="./assets/notebook2_icon.png" />
+                            <figcaption>
+                                <p>Notebook 2</p>
+                                <p>2023.05 - current</p>
+                            </figcaption>
                         </a>
                     </figure>
-                    <figure class="filterItem bookart p5js misc">
-                        <a href="kong.html">
-                            <img src="assets/kong_icon.png" />
-                            <figcaption>空 [kōng]</figcaption>
+                </div>
+            </div>
+            <div class="folder" id="misc-folder">
+                <div class="folder-header" id="misc-folder-header">
+                    <h1>misc</h1>
+                    <button type="button" name="goto misc page">
+                        <a href="../folder/misc.html">⤢</a>
+                    </button>
+                    <button
+                        class="close-folder-btn"
+                        id="close-misc-folder"
+                        type="button"
+                        name="close misc folder"
+                    >
+                        ✕
+                    </button>
+                </div>
+                <div class="infolder">
+                    <figure class="infolder-icon">
+                        <a href="./work/kong.html">
+                            <img src="./assets/kong_icon.png" />
+                            <figcaption>kōng</figcaption>
                         </a>
                     </figure>
-                    <figure class="filterItem misc">
-                        <a href="businesscards.html">
-                            <img src="assets/businesscards_icon.png" />
+                    <figure class="infolder-icon">
+                        <a href="./work/businesscards.html">
+                            <img src="./assets/businesscards_icon.png" />
                             <figcaption>business cards</figcaption>
                         </a>
                     </figure>
-                    <!-- <figure class="filterItem bookart misc">
-                    <a href="wontons.html">
-                        <img src="assets/wonton4.png">
-                        <figcaption>wontons</figcaption>
-                    </a>
-                </figure> -->
-                    <!-- <figure class="filterItem misc">
-                    <a href="pixelart.html">
-                        <img src="assets/px_hyahead.jpg">
-                        <figcaption>pixel art collection</figcaption>
-                    </a>
-                </figure> -->
-                    <figure class="filterItem netart">
-                        <a href="alexander.html">
-                            <img src="assets/alexander_icon.png" />
-                            <figcaption>letters to alexander</figcaption>
+                </div>
+            </div>
+            <div class="folder" id="drawpaint-folder">
+                <div class="folder-header" id="drawpaint-folder-header">
+                    <h1>drawings/paintings</h1>
+                    <button type="button" name="goto drawings/paintings page">
+                        <a href="./work/drawpaint.html">⤢</a>
+                    </button>
+                    <button
+                        class="close-folder-btn"
+                        id="close-drawpaint-folder"
+                        type="button"
+                        name="close draings/paintings folder"
+                    >
+                        ✕
+                    </button>
+                </div>
+                <div class="infolder">
+                    <figure class="infolder-icon">
+                        <a href="./work/drawpaint.html">
+                            <img src="./assets/draw_glasses.JPG" />
+                            <figcaption>
+                                <h1>i see you you see me</h1>
+                                <p>colored pencil, googly eyes</p>
+                            </figcaption>
                         </a>
                     </figure>
-                    <figure class="filterItem p5js">
-                        <a href="frogs.html">
-                            <img src="assets/facegen_icon.png" />
-                            <figcaption>face generators</figcaption>
+                    <figure class="infolder-icon">
+                        <a href="./work/drawpaint.html">
+                            <img src="./assets/paint_afterdinner.jpg" />
+                            <figcaption>
+                                <h1>After Dinner</h1>
+                                <h2>Traces of Me</h2>
+                                <p>watercolor</p>
+                            </figcaption>
                         </a>
                     </figure>
-                    <figure class="filterItem p5js">
-                        <a href="itchy.html">
-                            <img src="assets/itchy_icon.png" />
-                            <figcaption>itchy</figcaption>
+                    <figure class="infolder-icon">
+                        <a href="./work/drawpaint.html">
+                            <img src="./assets/paint_morning.jpg" />
+                            <figcaption>
+                                <h1>Morning</h1>
+                                <h2>Traces of Me</h2>
+                                <p>acrylic</p>
+                            </figcaption>
                         </a>
                     </figure>
-                    <figure class="filterItem p5js">
-                        <a href="moire.html">
-                            <img src="assets/moire_icon.png" />
-                            <figcaption>moiré</figcaption>
+                    <figure class="infolder-icon">
+                        <a href="./work/drawpaint.html">
+                            <img src="./assets/paint_shrimp.jpg" />
+                            <figcaption>
+                                <h1>Shrimp</h1>
+                                <p>watercolor</p>
+                            </figcaption>
+                        </a>
+                    </figure>
+                    <figure class="infolder-icon">
+                        <a href="./work/drawpaint.html">
+                            <img src="./assets/paint_student.jpg" />
+                            <figcaption>
+                                <h1>Student</h1>
+                                <h2>Traces of Me</h2>
+                                <p>watercolor, colored pencil</p>
+                            </figcaption>
+                        </a>
+                    </figure>
+                    <figure class="infolder-icon">
+                        <a href="./work/drawpaint.html">
+                            <img src="./assets/paint_sweettreat.jpg" />
+                            <figcaption>
+                                <h1>Sweet Treat</h1>
+                                <p>acrylic, oil</p>
+                            </figcaption>
+                        </a>
+                    </figure>
+                    <figure class="infolder-icon">
+                        <a href="./work/drawpaint.html">
+                            <img src="./assets/paint_trashman.jpg" />
+                            <figcaption>
+                                <h1>Trashman</h1>
+                                <p>acrylic, paper, trash</p>
+                            </figcaption>
+                        </a>
+                    </figure>
+                    <figure class="infolder-icon">
+                        <a href="./work/drawpaint.html">
+                            <img src="./assets/paint_trashspill.jpg" />
+                            <figcaption>
+                                <h1>Whoops</h1>
+                                <p>acrylic, trash, paper, clay</p>
+                            </figcaption>
+                        </a>
+                    </figure>
+                    <figure class="infolder-icon">
+                        <a href="./work/drawpaint.html">
+                            <img src="./assets/paint_waterdispenser.jpeg" />
+                            <figcaption>
+                                <h1>untitled</h1>
+                                <p>acrylic</p>
+                            </figcaption>
                         </a>
                     </figure>
                 </div>
             </div>
-        </main>
+            <div class="folder" id="p5-folder">
+                <div class="folder-header" id="p5-folder-header">
+                    <h1>p5.js play</h1>
+                    <button type="button" name="goto p5.js play page">
+                        <a href="./folder/p5jsplay.html">⤢</a>
+                    </button>
+                    <button
+                        class="close-folder-btn"
+                        id="close-p5-folder"
+                        type="button"
+                        name="close p5.js play folder"
+                    >
+                        ✕
+                    </button>
+                </div>
+                <div class="infolder">
+                    <figure class="infolder-icon">
+                        <a href="./work/kong.html">
+                            <img src="./assets/kong_icon.png" />
+                            <figcaption>kōng</figcaption>
+                        </a>
+                    </figure>
+                    <figure class="infolder-icon">
+                        <a href="./work/frogs.html">
+                            <img src="./assets/facegen_icon.png" />
+                            <figcaption>face generators</figcaption>
+                        </a>
+                    </figure>
+                    <figure class="infolder-icon">
+                        <a href="./work/itchy.html">
+                            <img src="./assets/itchy_icon.png" />
+                            <figcaption>itchy</figcaption>
+                        </a>
+                    </figure>
+                </div>
+            </div>
+            <div class="folder" id="web-folder">
+                <div class="folder-header" id="web-folder-header">
+                    <h1>web stuff</h1>
+                    <button type="button" name="goto web stuff page">
+                        <a href="./folder/webstuff.html">⤢</a>
+                    </button>
+                    <button
+                        class="close-folder-btn"
+                        id="close-web-folder"
+                        type="button"
+                        name="close web stuff folder"
+                    >
+                        ✕
+                    </button>
+                </div>
+                <div class="infolder">
+                    <figure class="infolder-icon">
+                        <a href="./work/house.html">
+                            <img src="./assets/house_icon.gif" />
+                            <figcaption>house</figcaption>
+                        </a>
+                    </figure>
+                    <figure class="infolder-icon">
+                        <a href="./work/alexander.html">
+                            <img src="./assets/alexander_icon.png" />
+                            <figcaption>alexander</figcaption>
+                        </a>
+                    </figure>
+                </div>
+            </div>
+            <div class="folder" id="hyacinth-folder">
+                <div class="folder-header" id="hyacinth-folder-header">
+                    <h1>
+                        Hi, I'm Hyacinth! <span style="font-size: 24px">✿</span>
+                    </h1>
+                    <button type="button" name="goto hyacinth page">⤢</button>
+                    <button
+                        class="close-folder-btn"
+                        id="close-hyacinth-folder"
+                        type="button"
+                        name="close Hyacinth folder"
+                    >
+                        ✕
+                    </button>
+                </div>
+                <div class="infolder">
+                    <div>
+                        <p>
+                            I make weird things on the computer, sometimes I
+                            paint. This is an archive of my work, the funky and
+                            fun stuff! ☺︎
+                        </p>
+                        <br />
+                        <p>
+                            contact me:
+                            <a href="mailto:hyacinthweng@gmail.com"
+                                >hyacinthweng@gmail.com</a
+                            >
+                        </p>
+                        <p>find me: <span>@pandahya</span> almost everywhere</p>
+                        <p>
+                            more work:
+                            <a
+                                href="https://www.hyacinthweng.com/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                >hyacinthweng.com&nearr;</a
+                            >
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="folder" id="trash-folder">
+                <div class="folder-header" id="trash-folder-header">
+                    <h1>trash</h1>
+                    <button type="button" name="goto trash page">⤢</button>
+                    <button
+                        class="close-folder-btn"
+                        id="close-trash-folder"
+                        type="button"
+                        name="close trash folder"
+                    >
+                        ✕
+                    </button>
+                </div>
+                <div class="infolder">
+                    <figure class="infolder-icon">
+                        <img src="./assets/garbage.png" />
+                    </figure>
+                </div>
+            </div>
+        </div>
     </body>
-    <script>
-        //https://www.w3schools.com/howto/howto_js_filter_elements.asp
-        filterSelection("all");
-        function filterSelection(c) {
-            let x, i;
-            x = document.getElementsByClassName("filterItem");
-            if (c == "all") c = "";
-            for (i = 0; i < x.length; i++) {
-                removeClass(x[i], "show");
-                if (x[i].className.indexOf(c) > -1) addClass(x[i], "show");
-            }
-        }
-        function addClass(element, name) {
-            let i, arr1, arr2;
-            arr1 = element.className.split(" ");
-            arr2 = name.split(" ");
-            for (i = 0; i < arr2.length; i++) {
-                if (arr1.indexOf(arr2[i]) == -1) {
-                    element.className += " " + arr2[i];
-                }
-            }
-        }
-        function removeClass(element, name) {
-            let i, arr1, arr2;
-            arr1 = element.className.split(" ");
-            arr2 = name.split(" ");
-            for (i = 0; i < arr2.length; i++) {
-                while (arr1.indexOf(arr2[i]) > -1) {
-                    arr1.splice(arr1.indexOf(arr2[i]), 1);
-                }
-            }
-            element.className = arr1.join(" ");
-        }
-        let btnContainer = document.getElementById("filterBtnContainer");
-        let btns = btnContainer.getElementsByClassName("filterBtn");
-        for (let i = 0; i < btns.length; i++) {
-            btns[i].addEventListener("click", function () {
-                let current = document.getElementsByClassName("active");
-                current[0].className = current[0].className.replace(
-                    " active",
-                    ""
-                );
-                this.className += " active";
-            });
-        }
-    </script>
+    <script src="./scripts/homeFun.js"></script>
 </html>
