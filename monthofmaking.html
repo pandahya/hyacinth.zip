@@ -41,6 +41,8 @@
     :root{
         --textColor: black;
         --backgroundColor: white;
+        --accentColor: #007AFF;
+        --accentColor2: #8A5731;
     }
     *{
         margin: 0;
@@ -86,6 +88,7 @@
         position: fixed;
         padding: 40px var(--page-padding-side) 8px var(--page-padding-side);
         width: 100%;
+        z-index: 5;
         /* box-shadow: 0px 8px 8px rgba(255, 255, 255, 0.5); */
     }
     nav{
@@ -102,9 +105,16 @@
         text-transform: capitalize;
         font-size: 12px;
     }
-    a{
-        color: var(--textColor);
+    a:link, a:visited{
+        color: var(--accentColor);
         text-decoration: none;
+    }
+    main a:hover{
+        color: var(--backgroundColor);
+        background-color: var(--accentColor);
+    }
+    header a:link, header a:visited{
+        color: var(--textColor);
     }
     #top{
         text-align: center;
@@ -130,13 +140,23 @@
         background-size: cover;
         border: 1px solid black;
         cursor: pointer;
+        isolation: auto;
     }
     .day p{
         color: white;
+        /* background-color: rgba(255, 255, 255, 0.5); */
+        /* display: inline; */
+        /* text-shadow:
+            -1px -1px 0 white,  
+            1px -1px 0 white,
+            -1px 1px 0 white,
+            1px 1px 0 white; */
         mix-blend-mode: exclusion;
-        opacity: 75%;
+        /* opacity: 75%; */
         text-align: left;
         padding: 4px;
+        /* padding: 0px 4px;
+        margin: 4px 0px; */
     }
     #modal{
         position: fixed;
@@ -316,8 +336,6 @@
         <section id="january" class="month">
             <figure><img class="mobile-hidden" src="assets/MoM/January_banner.jpg"><img class="desktop-hidden" src="assets/MoM/January_banner_sm.jpg"></figure>
             <article>
-                <!-- <h1>some sentence about sketching here</h1>
-                <br /> -->
                 <p>
                     I first learned art by sketching. My elementary school art teacher taught us to draw from pictures of objects, eventually moving on to still lives of things around us. When I began planning this, sketching immediately came to mind. I haven’t seriously sat down with just a pencil and paper in years; I wanted to start the year off going back to basics.
                 </p>
@@ -337,20 +355,68 @@
                 <div class="empty"></div>
                 <div class="empty"></div>
             </div>
+            <article class="reflection">
+                <p>
+                    The most difficult part of this exercise was finding something new to sketch every day. It had to be dinstinct enough to fit on a 6cm x 10cm paper, simple enough to render in under an hour, yet visually interesting enough to pose a bit of a challenge. 
+                </p>
+                <br>
+                <p>
+                    The most notable change that came out of this was my mindset. As the month progressed, I felt more and more comfortable with the pencil again. I was making bolder more confident strokes, and spending less time erasing, overthinking, and overcalculating. 
+                </p>
+                <br>
+                <p>
+                    I think the true value of these sketches lies the fact that I started the year off creating <i>something</i>, rather than looking literally at what I drew. More than anything, the daily routine laid the mental groundwork for the rest of the year of making.
+                </p>
+            </article>
         </section>
         <section id="february" class="month">
             <figure><img class="mobile-hidden" src="assets/MoM/February_banner.jpg"><img class="desktop-hidden" src="assets/MoM/February_banner_sm.jpg"></figure>
             <article>
-                <!-- <h1>Something new happens every day, you just have to look for it.</h1> -->
                 <p>
-                    Poster design was one of the first things I started with when learning graphic design, but it always felt like something I needed to practice more. To make this more digestible, I focused on the idea of <i>event posters</i>. I want to create a poster about something that happens every day, no matter the size of the "event".
+                    Poster design was one of the first things I explored when learning graphic design, but it always felt like something I needed to practice more. To make this process more digestible, I decided to focus on the concept of <i>event posters</i>. I want to create a poster for something that happens every day, no matter the size or significance of the "event."
                 </p>
                 <br>
                 <p>
-                    My hope for this is to a) practice graphic design in a meaningful way and b) try to break from the routine mindset of a monotonous daily life. By making myself notice the smaller happenings, I can hopefully live a more present life and be more appreciative of more intimiate, fleeting moments.
+                    My hope for this is to practice graphic design in a meaningful way and to break free from the routine mindset of a monotonous daily life. By challenging myself to notice the smaller, everyday happenings, I hope to live a more present life and become more appreciative of the intimate, fleeting moments that often go unnoticed.
                 </p>
             </article>
             <div id="february-grid" class="month-grid 28">
+                <p>sun</p>
+                <p>mon</p>
+                <p>tue</p>
+                <p>wed</p>
+                <p>thu</p>
+                <p>fri</p>
+                <p>sat</p>
+                <div class="empty"></div>
+                <div class="empty"></div>
+                <div class="empty"></div>
+                <div class="empty"></div>
+                <div class="empty"></div>
+                <div class="empty"></div>
+            </div>
+            <article class="reflection">
+                <p>
+                    I had a feeling a daily poster design was going to be a challenge, but I didn't anticipate how far I'd end up falling behind. As of March 7th, I still have 8 poster designs left to complete, though I've at least started on almost all of them. (Check back after March and I'll hopefully have them complete.)
+                </p>
+                <br>
+                <p>
+                    It took me longer than expected to come up with an "event" and visual concept every day, especially on the regular everyday days, which eventually led me to put off most of the designing to the weekends. I tried to keep every day visually/conceptually distinct, even if events were similar or repeated, which really pushed my design versatility. I found myself frequently flipping through <a href="https://ellenlupton.com/How-Posters-Work" target="_blank" rel="noopener noreferrer"><i>How Posters Work</i> by Ellen Lupton</a>—a book I (embarrassingly) hardly touched prior to this—and more actively noticing interesting design references around me.
+                </p>
+                <br>
+                <p>
+                    Although I didn’t complete the full month of designs within the set time frame, I feel that I was able to fulfill my goals to create meaningful work, feel more present every dya, and spend less time overthinking design decisions.
+                </p>
+            </article>
+        </section>
+        <section id="march" class="month">
+            <figure><img class="mobile-hidden" src="assets/MoM/March_banner.jpg"><img class="desktop-hidden" src="assets/MoM/March_banner_sm.jpg"></figure>
+            <article>
+                <p>
+                    Before diving into the rest of my "making" topics, I want to take some time to tie up loose ends from projects started in 2024. At the top of that list is my portfolio site—check it out at <a href="https://www.hyacinthweng.com/" target="_blank" rel="noopener noreferrer">www.hyacinthweng.com</a>. It's been in the works longer than I'd like to admit, and my lack of progress on it was one of the reasons I felt so creatively stagnant last year. But with the motto "new year, new me," I’m hoping to draw some motivation from this year-long project to finally wrap it up.
+                </p>
+            </article>
+            <div id="march-grid" class="month-grid 28">
                 <p>sun</p>
                 <p>mon</p>
                 <p>tue</p>
